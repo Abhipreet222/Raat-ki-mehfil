@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
+@theme {
+  --color-retro-wood: #704728;
+  --color-retro-wood-dark: #462811;
+  --color-retro-plastic: #e6dfc7;
+  --color-retro-plastic-dark: #c4b998;
+  --color-retro-screen: #111111;
+  --color-retro-text: #695e4d;
+  --color-retro-green: #38b054;
+  --color-retro-blue: #4fa6ff;
+  
+  --font-sans: 'Arial', sans-serif;
+  --font-mono: 'Courier New', monospace;
+  --font-inknut: var(--font-inknut), serif;
+  --font-saira: var(--font-saira), sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0a041c;
+  --foreground: #ededed;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .bg-retro-ribbed {
+    background: repeating-linear-gradient(
+      to right,
+      #e6dfc7,
+      #e6dfc7 2px,
+      #c4b998 3px,
+      #c4b998 4px
+    );
+  }
+  .bg-retro-wood {
+    background: linear-gradient(180deg, #704728 0%, #462811 100%);
+  }
+  .shadow-retro-btn {
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3), inset 1px 1px 2px rgba(255,255,255,0.8), inset -1px -1px 2px rgba(0,0,0,0.2);
+  }
+  .shadow-retro-btn-active {
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.4), inset -1px -1px 2px rgba(255,255,255,0.5);
+  }
+  .shadow-retro-inset {
+    box-shadow: inset 3px 3px 6px rgba(0,0,0,0.5), inset -1px -1px 3px rgba(255,255,255,0.3);
+  }
+  .shadow-retro-screen {
+    box-shadow: inset 4px 4px 10px rgba(0,0,0,0.8), inset -1px -1px 3px rgba(255,255,255,0.1);
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
 }

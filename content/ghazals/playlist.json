@@ -1,0 +1,206 @@
+{
+  "slug": "ghazals",
+  "displayName": "Ghazals",
+  "songs": [
+    {
+      "id": "ghz-01",
+      "title": "Dil Mein Ek Laher Si Uthi Hai Abhi",
+      "artist": "Ghulam Ali",
+      "youtubeId": "eIE4azF6Obs",
+      "coverUrl": "https://img.youtube.com/vi/eIE4azF6Obs/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-02",
+      "title": "Ham Ko Kiske Gham Ne Mara",
+      "artist": "Saregama Ghazal",
+      "youtubeId": "LnVW-lYaRIs",
+      "coverUrl": "https://img.youtube.com/vi/LnVW-lYaRIs/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-03",
+      "title": "Rafta Rafta Wo Meri",
+      "artist": "SUFISCORE",
+      "youtubeId": "WglSfZJOPds",
+      "coverUrl": "https://img.youtube.com/vi/WglSfZJOPds/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-04",
+      "title": "Woh Na Hoga To Kya Kami Hogi",
+      "artist": "Chandan Dass",
+      "youtubeId": "QOricoKI03k",
+      "coverUrl": "https://img.youtube.com/vi/QOricoKI03k/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-05",
+      "title": "Us Mod Se Shuroo Karen",
+      "artist": "Jagjit Singh",
+      "youtubeId": "8NHVfbEUJuw",
+      "coverUrl": "https://img.youtube.com/vi/8NHVfbEUJuw/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-06",
+      "title": "Ab Kya Ghazal Sunaoon",
+      "artist": "Saregama Ghazal",
+      "youtubeId": "LchpDnWgGAI",
+      "coverUrl": "https://img.youtube.com/vi/LchpDnWgGAI/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-07",
+      "title": "Na Jee Bharke Dekha",
+      "artist": "Chandan Dass",
+      "youtubeId": "gWFIWD4vNlY",
+      "coverUrl": "https://img.youtube.com/vi/gWFIWD4vNlY/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-08",
+      "title": "Mujhe Tum Nazar Se Gira Toh Rahe Ho",
+      "artist": "Mehdi Hassan",
+      "youtubeId": "6sMEV_Hvv-g",
+      "coverUrl": "https://img.youtube.com/vi/6sMEV_Hvv-g/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-09",
+      "title": "Ghulam Ali Ghazals",
+      "artist": "Ghulam Ali",
+      "youtubeId": "ClpoSShrxB8",
+      "coverUrl": "https://img.youtube.com/vi/ClpoSShrxB8/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-10",
+      "title": "Hungama Hai Kyon Barpa",
+      "artist": "Saregama Ghazal",
+      "youtubeId": "xQsMn1kmJs4",
+      "coverUrl": "https://img.youtube.com/vi/xQsMn1kmJs4/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-11",
+      "title": "Hothon Se Chhu Lo Tum",
+      "artist": "Jagjit Singh",
+      "youtubeId": "31f0mVT2Mvc",
+      "coverUrl": "https://img.youtube.com/vi/31f0mVT2Mvc/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-12",
+      "title": "Tere Qareeb Rahun Ya",
+      "artist": "Chandan Dass",
+      "youtubeId": "AJ1FeaIWp1E",
+      "coverUrl": "https://img.youtube.com/vi/AJ1FeaIWp1E/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-13",
+      "title": "Hoshwalon Ko Khabar Kya",
+      "artist": "Jagjit Singh",
+      "youtubeId": "hZuwe72Rtcc",
+      "coverUrl": "https://img.youtube.com/vi/hZuwe72Rtcc/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-14",
+      "title": "Ranjish Hi Sahi",
+      "artist": "Mehdi Hassan",
+      "youtubeId": "Xc6uwbXpmUY",
+      "coverUrl": "https://img.youtube.com/vi/Xc6uwbXpmUY/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-15",
+      "title": "Agar Hum Kahen Aur Woh Muskura Den",
+      "artist": "Saregama Music",
+      "youtubeId": "t67yWypwzXQ",
+      "coverUrl": "https://img.youtube.com/vi/t67yWypwzXQ/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-16",
+      "title": "Unko Bhi Humse Mohabbat Ho Jaruri To Nahi",
+      "artist": "ReGa Music Company",
+      "youtubeId": "aYIq2efHS94",
+      "coverUrl": "https://img.youtube.com/vi/aYIq2efHS94/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-17",
+      "title": "Hamari Saanson Mein Aaj Tak",
+      "artist": "Mehdi Hassan",
+      "youtubeId": "5U4Uc0DnUyc",
+      "coverUrl": "https://img.youtube.com/vi/5U4Uc0DnUyc/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-18",
+      "title": "Mere Humnafas",
+      "artist": "SUFISCORE",
+      "youtubeId": "yatjChKNqbs",
+      "coverUrl": "https://img.youtube.com/vi/yatjChKNqbs/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-19",
+      "title": "Kal Chaudhvin Ki Raat Thi",
+      "artist": "Saregama Ghazal",
+      "youtubeId": "JzaVoULkZNM",
+      "coverUrl": "https://img.youtube.com/vi/JzaVoULkZNM/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-20",
+      "title": "Tum Ko Dekha To Yeh Khayal Aaya",
+      "artist": "Jagjit Singh",
+      "youtubeId": "WtPbNKk9XpU",
+      "coverUrl": "https://img.youtube.com/vi/WtPbNKk9XpU/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-21",
+      "title": "Main Nashe Mein Hoon",
+      "artist": "Saregama Music",
+      "youtubeId": "gGopFU0mynI",
+      "coverUrl": "https://img.youtube.com/vi/gGopFU0mynI/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-22",
+      "title": "Superhit Gazal",
+      "artist": "Saregama Ghazal",
+      "youtubeId": "z3uynSFb1VM",
+      "coverUrl": "https://img.youtube.com/vi/z3uynSFb1VM/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-23",
+      "title": "Yun Zindagi Ki Raah Mein Takra Gaya Koi",
+      "artist": "Mehdi Hassan",
+      "youtubeId": "n_sUj4GWgOc",
+      "coverUrl": "https://img.youtube.com/vi/n_sUj4GWgOc/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-24",
+      "title": "Tere Aane Ki Jab Khabar Mehke",
+      "artist": "Jagjit Singh",
+      "youtubeId": "-G_Xi_x4g1s",
+      "coverUrl": "https://img.youtube.com/vi/-G_Xi_x4g1s/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "ghz-25",
+      "title": "Salona Sa Sajan Hai Aur Main Hoon",
+      "artist": "Saregama Music",
+      "youtubeId": "lkOg15y3uqk",
+      "coverUrl": "https://img.youtube.com/vi/lkOg15y3uqk/hqdefault.jpg",
+      "duration": 0
+    }
+  ]
+}

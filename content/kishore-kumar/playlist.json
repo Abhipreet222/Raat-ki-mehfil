@@ -1,0 +1,182 @@
+{
+  "slug": "kishore-kumar",
+  "displayName": "Kishore Kumar",
+  "songs": [
+    {
+      "id": "kk-01",
+      "title": "Raat Kali Ek Khwab Men Aai",
+      "artist": "Kishore Kumar",
+      "youtubeId": "0PmFXAabFzA",
+      "coverUrl": "https://img.youtube.com/vi/0PmFXAabFzA/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-02",
+      "title": "Pyaar Deewana Hota Hai",
+      "artist": "Kishore Kumar",
+      "youtubeId": "gKyUhjoto9o",
+      "coverUrl": "https://img.youtube.com/vi/gKyUhjoto9o/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-03",
+      "title": "Ye Dil Tum Bin",
+      "artist": "Kishore Kumar",
+      "youtubeId": "rT1jRPI8REU",
+      "coverUrl": "https://img.youtube.com/vi/rT1jRPI8REU/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-04",
+      "title": "Kahin Door Jab Din Dhal Jaye",
+      "artist": "Kishore Kumar",
+      "youtubeId": "l6S_kWn7LP4",
+      "coverUrl": "https://img.youtube.com/vi/l6S_kWn7LP4/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-05",
+      "title": "Kabhi Kabhie Mere Dil Mein",
+      "artist": "Kishore Kumar",
+      "youtubeId": "BB6KvXQx090",
+      "coverUrl": "https://img.youtube.com/vi/BB6KvXQx090/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-06",
+      "title": "Aa Chal Ke Tujhe",
+      "artist": "Kishore Kumar",
+      "youtubeId": "Y_8VmzWOsgs",
+      "coverUrl": "https://img.youtube.com/vi/Y_8VmzWOsgs/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-07",
+      "title": "Mere Naina Sawan Bhadon",
+      "artist": "Kishore Kumar",
+      "youtubeId": "_4Ccxj_A4UU",
+      "coverUrl": "https://img.youtube.com/vi/_4Ccxj_A4UU/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-08",
+      "title": "Chingari Koi Bhadke",
+      "artist": "Kishore Kumar",
+      "youtubeId": "-PwDZUbHpuI",
+      "coverUrl": "https://img.youtube.com/vi/-PwDZUbHpuI/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-09",
+      "title": "Kora Kagaz Tha",
+      "artist": "Kishore Kumar",
+      "youtubeId": "kqXs4GGp8bw",
+      "coverUrl": "https://img.youtube.com/vi/kqXs4GGp8bw/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-10",
+      "title": "Kahi Door Jab",
+      "artist": "Kishore Kumar",
+      "youtubeId": "ALcunSNj794",
+      "coverUrl": "https://img.youtube.com/vi/ALcunSNj794/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-11",
+      "title": "Hamein Tumse Pyaar Kitna",
+      "artist": "Kishore Kumar",
+      "youtubeId": "lNW8qsoeWs4",
+      "coverUrl": "https://img.youtube.com/vi/lNW8qsoeWs4/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-12",
+      "title": "Tum Aa Gaye Ho Noor Aa Gaya",
+      "artist": "Kishore Kumar",
+      "youtubeId": "PTA3yBK7DFE",
+      "coverUrl": "https://img.youtube.com/vi/PTA3yBK7DFE/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-13",
+      "title": "Aanewala Pal Janewala Hai",
+      "artist": "Kishore Kumar",
+      "youtubeId": "VE3SaNOJPGI",
+      "coverUrl": "https://img.youtube.com/vi/VE3SaNOJPGI/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-14",
+      "title": "Khwaab Ho Tum Ya Koi",
+      "artist": "Kishore Kumar",
+      "youtubeId": "Jw4wLVnFJ-E",
+      "coverUrl": "https://img.youtube.com/vi/Jw4wLVnFJ-E/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-15",
+      "title": "Bade Achhe Lagte Hai",
+      "artist": "Kishore Kumar",
+      "youtubeId": "p5EeJ9bHAOI",
+      "coverUrl": "https://img.youtube.com/vi/p5EeJ9bHAOI/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-16",
+      "title": "Dekha Ek Khwab",
+      "artist": "Kishore Kumar",
+      "youtubeId": "sVwpwEwIw5w",
+      "coverUrl": "https://img.youtube.com/vi/sVwpwEwIw5w/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-17",
+      "title": "Dil Kya Kare",
+      "artist": "Kishore Kumar",
+      "youtubeId": "hx0R3F768Io",
+      "coverUrl": "https://img.youtube.com/vi/hx0R3F768Io/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-18",
+      "title": "Meri Bheegi Bheegi Si",
+      "artist": "Kishore Kumar",
+      "youtubeId": "Wh-bV7i0B78",
+      "coverUrl": "https://img.youtube.com/vi/Wh-bV7i0B78/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-19",
+      "title": "Chhu Kar Mere Man Ko",
+      "artist": "Kishore Kumar",
+      "youtubeId": "4w9FBmbCfws",
+      "coverUrl": "https://img.youtube.com/vi/4w9FBmbCfws/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-20",
+      "title": "Raat Kali Ek Khwab Mein",
+      "artist": "Kishore Kumar",
+      "youtubeId": "jFYlChHSdzo",
+      "coverUrl": "https://img.youtube.com/vi/jFYlChHSdzo/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-21",
+      "title": "Pal Pal Dil Ke Paas",
+      "artist": "Kishore Kumar",
+      "youtubeId": "QwLQ4_gkvsE",
+      "coverUrl": "https://img.youtube.com/vi/QwLQ4_gkvsE/hqdefault.jpg",
+      "duration": 0
+    },
+    {
+      "id": "kk-22",
+      "title": "Musafir Hoon Yaaron",
+      "artist": "Kishore Kumar",
+      "youtubeId": "kDPNcxHGkmY",
+      "coverUrl": "https://img.youtube.com/vi/kDPNcxHGkmY/hqdefault.jpg",
+      "duration": 0
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "title": "Aadat (Lofi Remake)",
+    "artist": "Atif Aslam",
+    "coverUrl": "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?q=80&w=200&auto=format&fit=crop",
+    "audioUrl": "https://cdn.pixabay.com/download/audio/2022/05/16/audio_b8c9103636.mp3?filename=lofi-study-112191.mp3"
+  },
+  {
+    "id": "2",
+    "title": "Night Drive in Mumbai",
+    "artist": "Lofi Producer",
+    "coverUrl": "https://images.unsplash.com/photo-1555529733-0e67056058e1?q=80&w=200&auto=format&fit=crop",
+    "audioUrl": "https://cdn.pixabay.com/download/audio/2022/02/10/audio_fc94cb022e.mp3?filename=empty-mind-118973.mp3"
+  },
+  {
+    "id": "3",
+    "title": "Ghazal Lo-Fi Mix",
+    "artist": "Unknown",
+    "coverUrl": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?q=80&w=200&auto=format&fit=crop",
+    "audioUrl": "https://cdn.pixabay.com/download/audio/2021/08/09/audio_6b7a5a8947.mp3?filename=purrple-cat-equinox-114711.mp3"
+  }
+]
