@@ -489,8 +489,9 @@ export default function RaatMehfilPlayer() {
         />
       </div>
 
-      {/* Left Side Glassmorphism Buttons */}
-      <div className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-3 md:gap-4 pointer-events-auto">
+      {/* Left Side Glassmorphism Buttons — desktop: vertically centered left | mobile: above the player */}
+      {/* Mobile layout: bottom-[310px] places them just above the scaled player */}
+      <div className="absolute left-4 md:left-6 bottom-[310px] md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-20 flex flex-col gap-3 md:gap-4 pointer-events-auto">
         {/* Shayari */}
         <div className="glass-btn-wrapper">
           <button
