@@ -64,4 +64,70 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
   }
+  /* Glassmorphism button with animated glowing border */
+  .glass-btn-wrapper {
+    position: relative;
+    border-radius: 14px;
+    padding: 1.5px;
+    background: transparent;
+  }
+  .glass-btn-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    padding: 1.5px;
+    background: conic-gradient(
+      from var(--angle, 0deg),
+      transparent 20%,
+      rgba(200,200,200,0.9) 40%,
+      rgba(255,255,255,1) 50%,
+      rgba(200,200,200,0.9) 60%,
+      transparent 80%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: spin-border 3s linear infinite;
+  }
+  .glass-btn {
+    position: relative;
+    z-index: 1;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.88);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .glass-btn:hover {
+    background: rgba(255, 255, 255, 0.13);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(200,200,200,0.15), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  .glass-btn:active {
+    transform: translateY(0px);
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-border {
+  from { --angle: 0deg; }
+  to   { --angle: 360deg; }
 }

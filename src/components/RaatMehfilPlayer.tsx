@@ -8,6 +8,7 @@ import Link from 'next/link';
 import YouTube, { YouTubeEvent, YouTubePlayer } from 'react-youtube';
 import PlaylistPanel from './PlaylistPanel';
 import QueuePanel from './QueuePanel';
+import Clock from './Clock';
 
 // Formatting seconds to M:SS
 const formatTime = (timeInSeconds: number) => {
@@ -49,6 +50,27 @@ export default function RaatMehfilPlayer() {
   
   const playerRef = useRef<YouTubePlayer | null>(null);
   const timeUpdateInterval = useRef<NodeJS.Timeout | null>(null);
+
+  // Sound effect refs — drop files into public/sounds/
+  const shayariSoundRef = useRef<HTMLAudioElement | null>(null);
+  const wahWahSoundRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    shayariSoundRef.current = new Audio('/sounds/shayari.mp3');
+    wahWahSoundRef.current  = new Audio('/sounds/wah-wah.mp3');
+  }, []);
+
+  const playShayariSound = () => {
+    if (!shayariSoundRef.current) return;
+    shayariSoundRef.current.currentTime = 0;
+    shayariSoundRef.current.play().catch(() => {});
+  };
+
+  const playWahWahSound = () => {
+    if (!wahWahSoundRef.current) return;
+    wahWahSoundRef.current.currentTime = 0;
+    wahWahSoundRef.current.play().catch(() => {});
+  };
 
   // Initial Fetch Playlists Index
   useEffect(() => {
@@ -407,6 +429,8 @@ export default function RaatMehfilPlayer() {
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
       </div>
 
+      <Clock />
+
       {/* Top Bar: Listeners, Panel Toggles, and Social Icons */}
       <div className="absolute top-0 left-0 right-0 z-10 flex justify-between items-start p-4 md:p-6 pointer-events-none">
         
@@ -426,7 +450,18 @@ export default function RaatMehfilPlayer() {
         </div>
 
         {/* Social Icons Top Right */}
-        <div className="flex-1 flex justify-end pointer-events-auto">
+        <div className="flex-1 flex justify-end gap-4 md:gap-5 pointer-events-auto">
+          <Link href="https://music.youtube.com/" target="_blank" rel="noopener noreferrer" className="group flex items-start gap-1 text-white hover:text-gray-300 drop-shadow-md transition-colors">
+            {/* YouTube Icon */}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 md:w-5 md:h-5">
+              <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+              <path d="m10 15 5-3-5-3z" />
+            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 md:w-3.5 md:h-3.5 mt-1.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-[2px] group-hover:-translate-y-[2px] transition-all">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </Link>
           <Link href="https://www.instagram.com/abhipreet_9/" target="_blank" rel="noopener noreferrer" className="group flex items-start gap-1 text-white hover:text-gray-300 drop-shadow-md transition-colors">
             {/* Instagram Icon */}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 md:w-5 md:h-5">
@@ -445,14 +480,44 @@ export default function RaatMehfilPlayer() {
       {/* Tag Line Image Area */}
       <div className="absolute top-12 md:top-16 left-0 right-0 bottom-[350px] md:bottom-[400px] z-10 flex items-center justify-center px-4 pointer-events-none">
         <Image 
-          src="/tag_line.png"
+          src="/TAGLINE.png"
           alt="Tag line"
           width={300}
           height={150}
-          className="object-contain w-2/5 max-w-[150px] md:max-w-[250px] lg:max-w-[300px] drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
+          className="object-contain w-2/5 max-w-[150px] md:max-w-[250px] lg:max-w-[300px] drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)] mt-4 md:mt-6"
           priority
         />
       </div>
+
+      {/* Left Side Glassmorphism Buttons */}
+      <div className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-3 md:gap-4 pointer-events-auto">
+        {/* Shayari */}
+        <div className="glass-btn-wrapper">
+          <button
+            onClick={playShayariSound}
+            className="glass-btn px-4 py-2.5 md:px-5 md:py-3 text-xs md:text-sm font-[family-name:var(--font-poppins)] w-full"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 shrink-0">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            Shayari
+          </button>
+        </div>
+
+        {/* Wah Wah */}
+        <div className="glass-btn-wrapper">
+          <button
+            onClick={playWahWahSound}
+            className="glass-btn px-4 py-2.5 md:px-5 md:py-3 text-xs md:text-sm font-[family-name:var(--font-poppins)] w-full"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 shrink-0">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            Wah Wah
+          </button>
+        </div>
+      </div>
+
 
       {/* Main Retro Player Shell */}
       <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 z-20 w-[95%] max-w-3xl xl:max-w-4xl transform scale-[0.75] md:scale-[0.7] lg:scale-[0.65] xl:scale-[0.6] origin-bottom rounded-[30px] md:rounded-[40px] bg-retro-wood p-3 md:p-4 shadow-[0_20px_50px_rgba(0,0,0,0.8)] flex border-[3px] md:border-[4px] border-[#3a200d]">
