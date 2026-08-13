@@ -200,6 +200,48 @@ export default function RaatMehfilPlayer() {
     return () => clearInterval(interval);
   }, []);
 
+  // ─── Media Session API ────────────────────────────────────────────────────
+  // Updates OS lock screen / notification media card whenever track changes.
+  useEffect(() => {
+    if (!('mediaSession' in navigator) || !nowPlayingTrack) return;
+
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title:  nowPlayingTrack.title,
+      artist: nowPlayingTrack.artist,
+      album:  'Raat Ki Mehfil',
+      artwork: [
+        { src: nowPlayingTrack.coverUrl, sizes: '512x512', type: 'image/jpeg' },
+      ],
+    });
+  }, [nowPlayingTrack]);
+
+  // Sync playback state with OS (so lock screen shows correct play/pause icon)
+  useEffect(() => {
+    if (!('mediaSession' in navigator)) return;
+    navigator.mediaSession.playbackState = isPlaying ? 'playing' : 'paused';
+  }, [isPlaying]);
+
+  // Register lock screen / headphone button action handlers
+  // We use refs so this effect doesn't depend on declaration order of handleNext/handlePrev
+  const handleNextRef = useRef<() => void>(() => {});
+  const handlePrevRef = useRef<() => void>(() => {});
+
+  useEffect(() => {
+    if (!('mediaSession' in navigator)) return;
+
+    navigator.mediaSession.setActionHandler('play', () => setIsPlaying(true));
+    navigator.mediaSession.setActionHandler('pause', () => setIsPlaying(false));
+    navigator.mediaSession.setActionHandler('nexttrack', () => handleNextRef.current());
+    navigator.mediaSession.setActionHandler('previoustrack', () => handlePrevRef.current());
+
+    return () => {
+      (['play', 'pause', 'nexttrack', 'previoustrack'] as MediaSessionAction[]).forEach(action => {
+        try { navigator.mediaSession.setActionHandler(action, null); } catch {}
+      });
+    };
+  }, []); // runs once; refs always hold the latest function
+  // ─────────────────────────────────────────────────────────────────────────
+
   // Playlist Navigation Logic
   const getNextTrackIndex = useCallback((currentIndex: number) => {
     if (tracks.length === 0) return 0;
@@ -248,6 +290,10 @@ export default function RaatMehfilPlayer() {
     setNowPlayingTrack(tracks[prevIdx]);
     setIsPlaying(true);
   };
+
+  // Keep Media Session refs up-to-date with latest handlers
+  handleNextRef.current = handleNext;
+  handlePrevRef.current = handlePrev;
 
   const toggleShuffle = () => {
     if (!isShuffled) {
