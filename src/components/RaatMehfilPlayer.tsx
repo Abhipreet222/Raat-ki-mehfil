@@ -72,6 +72,16 @@ export default function RaatMehfilPlayer() {
   const playerRef = useRef<YouTubePlayer | null>(null);
   const timeUpdateInterval = useRef<NodeJS.Timeout | null>(null);
 
+  // ── Web Audio keep-alive ──────────────────────────────────────────────────
+  // A silent oscillator running in an AudioContext signals to Android Chrome
+  // that this tab has active audio output, preventing it from being suspended
+  // when the screen locks or Chrome is minimized.
+  const audioCtxRef   = useRef<AudioContext | null>(null);
+  const gainNodeRef   = useRef<GainNode | null>(null);
+  const oscillatorRef = useRef<OscillatorNode | null>(null);
+  const isPlayingRef  = useRef(false); // track playing state for visibilitychange
+  // ─────────────────────────────────────────────────────────────────────────
+
   // Sound effect refs — drop files into public/sounds/
   const shayariSoundRef = useRef<HTMLAudioElement | null>(null);
   const wahWahSoundRef = useRef<HTMLAudioElement | null>(null);
@@ -80,6 +90,56 @@ export default function RaatMehfilPlayer() {
     shayariSoundRef.current = new Audio('/sounds/shayari.mp3');
     wahWahSoundRef.current  = new Audio('/sounds/wah-wah.mp3');
   }, []);
+
+  // ── Start/stop Web Audio keep-alive when play state changes ──────────────
+  useEffect(() => {
+    isPlayingRef.current = isPlaying;
+
+    if (isPlaying) {
+      // Create AudioContext on first play (requires user gesture — satisfied by play click)
+      if (!audioCtxRef.current) {
+        try {
+          const ctx = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+          const gain = ctx.createGain();
+          gain.gain.value = 0.001; // virtually silent, just enough to register
+          const osc = ctx.createOscillator();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start();
+          audioCtxRef.current   = ctx;
+          gainNodeRef.current   = gain;
+          oscillatorRef.current = osc;
+        } catch {}
+      } else if (audioCtxRef.current.state === 'suspended') {
+        audioCtxRef.current.resume().catch(() => {});
+      }
+    }
+    // We intentionally keep the context alive even when paused so the audio session
+    // stays registered with the OS — it will be cleaned up on component unmount.
+  }, [isPlaying]);
+
+  // Clean up AudioContext on unmount
+  useEffect(() => {
+    return () => {
+      try { oscillatorRef.current?.stop(); } catch {}
+      audioCtxRef.current?.close().catch(() => {});
+    };
+  }, []);
+
+  // ── Resume playback after tab comes back to foreground ───────────────────
+  // YouTube's iframe player pauses itself on visibilitychange; we undo that.
+  useEffect(() => {
+    const onVisibility = () => {
+      if (document.visibilityState === 'visible' && isPlayingRef.current) {
+        setTimeout(() => {
+          playerRef.current?.playVideo();
+        }, 400); // short delay lets the iframe re-initialise
+      }
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => document.removeEventListener('visibilitychange', onVisibility);
+  }, []);
+  // ─────────────────────────────────────────────────────────────────────────
 
   const playShayariSound = () => {
     if (!shayariSoundRef.current) return;
