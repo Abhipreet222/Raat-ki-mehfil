@@ -451,11 +451,10 @@ export default function RaatMehfilPlayer() {
 
         {/* Social Icons Top Right */}
         <div className="flex-1 flex justify-end gap-4 md:gap-5 pointer-events-auto">
-          <Link href="https://music.youtube.com/" target="_blank" rel="noopener noreferrer" className="group flex items-start gap-1 text-white hover:text-gray-300 drop-shadow-md transition-colors">
-            {/* YouTube Icon */}
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 md:w-5 md:h-5">
-              <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-              <path d="m10 15 5-3-5-3z" />
+          <Link href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer" className="group flex items-start gap-1 text-white hover:text-[#1DB954] drop-shadow-md transition-colors">
+            {/* Spotify Icon */}
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 md:w-5 md:h-5">
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.622.622 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 0 1-.277-1.215c3.809-.87 7.076-.496 9.712 1.115a.623.623 0 0 1 .207.857zm1.223-2.722a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 0 1-.973-.519.781.781 0 0 1 .52-.973c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 0 1 .257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 1 1-.543-1.793c3.563-1.082 9.484-.872 13.22 1.33a.937.937 0 0 1-.96 1.62z"/>
             </svg>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 md:w-3.5 md:h-3.5 mt-1.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-[2px] group-hover:-translate-y-[2px] transition-all">
               <line x1="7" y1="17" x2="17" y2="7"/>
