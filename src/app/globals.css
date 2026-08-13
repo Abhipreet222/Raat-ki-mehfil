@@ -67,7 +67,7 @@ body {
   /* Glassmorphism button with animated glowing border */
   .glass-btn-wrapper {
     position: relative;
-    border-radius: 14px;
+    border-radius: 999px;
     padding: 1.5px;
     background: transparent;
   }
@@ -75,7 +75,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 14px;
+    border-radius: 999px;
     padding: 1.5px;
     background: conic-gradient(
       from var(--angle, 0deg),
@@ -94,7 +94,7 @@ body {
   .glass-btn {
     position: relative;
     z-index: 1;
-    border-radius: 12px;
+    border-radius: 999px;
     background: rgba(255, 255, 255, 0.07);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);

@@ -10,6 +10,19 @@ import PlaylistPanel from './PlaylistPanel';
 import QueuePanel from './QueuePanel';
 import Clock from './Clock';
 
+// Returns the correct background image path based on the current hour
+// Night:   9 PM – 4 AM  → /background.png
+// Morning: 4 AM – 12 PM → /morning-bg.png
+// Day:    12 PM –  4 PM → /day-bg.png
+// Evening: 4 PM –  9 PM → /evening-bg.png
+function getBackgroundImage(): string {
+  const hour = new Date().getHours();
+  if (hour >= 4 && hour < 12) return '/morning-bg.png';
+  if (hour >= 12 && hour < 16) return '/day-bg.png';
+  if (hour >= 16 && hour < 21) return '/evening-bg.png';
+  return '/background.png'; // night: 9 PM – 4 AM
+}
+
 // Formatting seconds to M:SS
 const formatTime = (timeInSeconds: number) => {
   if (isNaN(timeInSeconds) || timeInSeconds < 0) return "0:00";
@@ -37,6 +50,14 @@ export default function RaatMehfilPlayer() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [listeners, setListeners] = useState(0);
+
+  // Time-based background — updates every minute
+  const [backgroundSrc, setBackgroundSrc] = useState<string>(getBackgroundImage);
+  useEffect(() => {
+    const tick = () => setBackgroundSrc(getBackgroundImage());
+    const id = setInterval(tick, 60_000); // re-check every minute
+    return () => clearInterval(id);
+  }, []);
 
   const [isPlaylistPanelOpen, setIsPlaylistPanelOpen] = useState(false);
   const [isQueuePanelOpen, setIsQueuePanelOpen] = useState(false);
@@ -416,14 +437,15 @@ export default function RaatMehfilPlayer() {
         }}
       />
 
-      {/* Background Image */}
+      {/* Time-based Background Image — switches automatically every minute */}
       <div className="absolute inset-0 z-0 bg-black pointer-events-none">
         <Image 
-          src="/background.png" 
-          alt="Night background" 
+          key={backgroundSrc}
+          src={backgroundSrc}
+          alt="Background" 
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center transition-opacity duration-1000"
         />
         {/* Bottom Gradient Overlay */}
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
@@ -476,28 +498,27 @@ export default function RaatMehfilPlayer() {
         </div>
       </div>
 
-      {/* Tag Line Image Area */}
-      <div className="absolute top-12 md:top-16 left-0 right-0 bottom-[350px] md:bottom-[400px] z-10 flex items-center justify-center px-4 pointer-events-none">
+      {/* Tag Line Image Area — sits in upper half, safely above the player */}
+      <div className="absolute top-20 left-0 right-0 z-10 flex justify-center px-4 pointer-events-none" style={{bottom: 'auto'}}>
         <Image 
           src="/TAGLINE.png"
           alt="Tag line"
           width={300}
           height={150}
-          className="object-contain w-2/5 max-w-[150px] md:max-w-[250px] lg:max-w-[300px] drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)] mt-4 md:mt-6"
+          className="object-contain w-2/5 max-w-[130px] md:max-w-[250px] lg:max-w-[300px] drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
           priority
         />
       </div>
 
-      {/* Left Side Glassmorphism Buttons — desktop: vertically centered left | mobile: above the player */}
-      {/* Mobile layout: bottom-[310px] places them just above the scaled player */}
-      <div className="absolute left-4 md:left-6 bottom-[310px] md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-20 flex flex-col gap-3 md:gap-4 pointer-events-auto">
+      {/* Left Side Glassmorphism Buttons — just below the Clock (date & time) */}
+      <div className="absolute left-6 md:left-8 top-[72px] md:top-[88px] z-30 flex flex-col gap-2 md:gap-3 pointer-events-auto">
         {/* Shayari */}
         <div className="glass-btn-wrapper">
           <button
             onClick={playShayariSound}
-            className="glass-btn px-3 py-1.5 md:px-5 md:py-3 text-[10px] md:text-sm font-[family-name:var(--font-poppins)] w-full"
+            className="glass-btn px-2 py-0.5 md:px-3 md:py-1.5 text-[8px] md:text-[10px] font-[family-name:var(--font-poppins)] w-full"
           >
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 md:w-4 md:h-4 shrink-0">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-2 h-2 md:w-2.5 md:h-2.5 shrink-0">
               <path d="M8 5v14l11-7z"/>
             </svg>
             Shayari
@@ -508,9 +529,9 @@ export default function RaatMehfilPlayer() {
         <div className="glass-btn-wrapper">
           <button
             onClick={playWahWahSound}
-            className="glass-btn px-3 py-1.5 md:px-5 md:py-3 text-[10px] md:text-sm font-[family-name:var(--font-poppins)] w-full"
+            className="glass-btn px-2 py-0.5 md:px-3 md:py-1.5 text-[8px] md:text-[10px] font-[family-name:var(--font-poppins)] w-full"
           >
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 md:w-4 md:h-4 shrink-0">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-2 h-2 md:w-2.5 md:h-2.5 shrink-0">
               <path d="M8 5v14l11-7z"/>
             </svg>
             Wah Wah
