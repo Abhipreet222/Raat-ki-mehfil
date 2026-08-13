@@ -496,9 +496,9 @@ export default function RaatMehfilPlayer() {
         <div className="glass-btn-wrapper">
           <button
             onClick={playShayariSound}
-            className="glass-btn px-4 py-2.5 md:px-5 md:py-3 text-xs md:text-sm font-[family-name:var(--font-poppins)] w-full"
+            className="glass-btn px-3 py-1.5 md:px-5 md:py-3 text-[10px] md:text-sm font-[family-name:var(--font-poppins)] w-full"
           >
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 shrink-0">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 md:w-4 md:h-4 shrink-0">
               <path d="M8 5v14l11-7z"/>
             </svg>
             Shayari
@@ -509,9 +509,9 @@ export default function RaatMehfilPlayer() {
         <div className="glass-btn-wrapper">
           <button
             onClick={playWahWahSound}
-            className="glass-btn px-4 py-2.5 md:px-5 md:py-3 text-xs md:text-sm font-[family-name:var(--font-poppins)] w-full"
+            className="glass-btn px-3 py-1.5 md:px-5 md:py-3 text-[10px] md:text-sm font-[family-name:var(--font-poppins)] w-full"
           >
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 shrink-0">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 md:w-4 md:h-4 shrink-0">
               <path d="M8 5v14l11-7z"/>
             </svg>
             Wah Wah
