@@ -9,7 +9,7 @@ type Listener = {
 // Map of hashed IPs to Listener data
 const activeListeners = new Map<string, Listener>();
 
-const TIMEOUT_MS = 30000; // 30 seconds timeout
+const TIMEOUT_MS = 8000; // 8 seconds timeout (ping interval is 5s, +3s buffer for slow networks)
 
 export function recordListenerActivity(id: string) {
   activeListeners.set(id, { lastSeen: Date.now() });

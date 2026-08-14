@@ -248,15 +248,28 @@ export default function RaatMehfilPlayer() {
   }, [isPlaying, isDraggingTimeline]);
 
   // Poll for listeners
+  // Each browser gets a stable UUID stored in localStorage so the server
+  // can count unique visitors reliably (no IP hashing required).
   useEffect(() => {
+    const getOrCreateListenerId = (): string => {
+      const KEY = 'raat_mehfil_listener_id';
+      let id = localStorage.getItem(KEY);
+      if (!id) {
+        id = crypto.randomUUID();
+        localStorage.setItem(KEY, id);
+      }
+      return id;
+    };
+
     const fetchListeners = () => {
-      fetch('/api/listeners')
+      const id = getOrCreateListenerId();
+      fetch(`/api/listeners?id=${encodeURIComponent(id)}`)
         .then(res => res.json())
         .then(data => setListeners(data.count))
         .catch(console.error);
     };
     fetchListeners();
-    const interval = setInterval(fetchListeners, 15000);
+    const interval = setInterval(fetchListeners, 5000); // ping every 5s for fast drop detection
     return () => clearInterval(interval);
   }, []);
 
