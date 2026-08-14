@@ -281,7 +281,7 @@ export default function RaatMehfilPlayer() {
     navigator.mediaSession.metadata = new MediaMetadata({
       title:  nowPlayingTrack.title,
       artist: nowPlayingTrack.artist,
-      album:  'Raat Ki Mehfil',
+      album:  'Aap Ki Mehfil',
       artwork: [
         { src: nowPlayingTrack.coverUrl, sizes: '512x512', type: 'image/jpeg' },
       ],
@@ -489,7 +489,7 @@ export default function RaatMehfilPlayer() {
     return up;
   };
 
-  if (!nowPlayingTrack) return <div className="min-h-screen flex items-center justify-center text-white font-sans bg-black">Loading Raat Ki Mehfil...</div>;
+  if (!nowPlayingTrack) return <div className="min-h-screen flex items-center justify-center text-white font-sans bg-black">Loading Aap Ki Mehfil...</div>;
 
   return (
     <div className="fixed inset-0 w-screen h-screen overflow-hidden bg-black font-saira">

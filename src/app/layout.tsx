@@ -32,19 +32,19 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://raat-ki-mehfil.vercel.app"),
-  title: "Raat Ki Mehfil",
-  description: "ek raat, ek mehfil, ek gaana — a digital night salon.",
+  title: "Aap Ki Mehfil",
+  description: "ek mehfil, ek ehsaas, ek gaana — a digital salon.",
   openGraph: {
-    title: "Raat Ki Mehfil",
-    description: "ek raat, ek mehfil, ek gaana — a digital night salon.",
-    url: "https://raat-ki-mehfil.vercel.app", // Placeholder URL
-    siteName: "Raat Ki Mehfil",
+    title: "Aap Ki Mehfil",
+    description: "ek mehfil, ek ehsaas, ek gaana — a digital salon.",
+    url: "https://raat-ki-mehfil.vercel.app",
+    siteName: "Aap Ki Mehfil",
     images: [
       {
         url: "/bg.png",
         width: 1200,
         height: 630,
-        alt: "Raat Ki Mehfil Background",
+        alt: "Aap Ki Mehfil Background",
       },
     ],
     locale: "en_US",
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Raat Ki Mehfil",
-    description: "ek raat, ek mehfil, ek gaana — a digital night salon.",
+    title: "Aap Ki Mehfil",
+    description: "ek mehfil, ek ehsaas, ek gaana — a digital salon.",
     images: ["/bg.png"],
   },
 };
