@@ -620,7 +620,7 @@ export default function RaatMehfilPlayer() {
       {/* Tag Line Image Area — sits in upper half, safely above the player */}
       <div className="absolute top-20 left-0 right-0 z-10 flex justify-center px-4 pointer-events-none" style={{bottom: 'auto'}}>
         <Image 
-          src="/TAGLINE.png"
+          src="/new_tagline.png"
           alt="Tag line"
           width={300}
           height={150}
