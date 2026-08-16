@@ -34,6 +34,16 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://raat-ki-mehfil.vercel.app"),
   title: "Aap Ki Mehfil",
   description: "ek mehfil, ek ehsaas, ek gaana — a digital salon.",
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon-32x32.png",
+  },
   openGraph: {
     title: "Aap Ki Mehfil",
     description: "ek mehfil, ek ehsaas, ek gaana — a digital salon.",
