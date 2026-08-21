@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Aap Ki Mehfil",
-    description: "ek mehfil, ek ehsaas, ek gaana — a digital salon.",
+    description: "Ek mehfil, Ek ehsaas, Anek gaane — A digital Music Player.",
     images: ["/bg.png"],
   },
 };
